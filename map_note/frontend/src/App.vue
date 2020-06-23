@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+    <div style="width:600px; height:150px; border:1px solid red; float:left; margin-bottom:10px;">
+      <p><big>사용 방법</big></p>
+      <p>1. 메모를 남기고 싶은 장소를 클릭합니다.<br/>(클릭한 곳의 좌표가 지도밑에 보여집니다.)<br/>2. 메모를 작성합니다. <br/>3. summit을 눌러 저장합니다</p>
+    </div>
+
     <div id="map"></div>
 
 <!--    현재 클릭된 위치의 좌표 정보를 보여줍니다.-->

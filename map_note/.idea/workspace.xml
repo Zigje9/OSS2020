@@ -22,6 +22,7 @@
     <list default="true" id="578b8622-25fa-415e-9a26-e4da58deaeaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/webpack-stats.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/webpack-stats.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +104,7 @@
       <workItem from="1592899811812" duration="237000" />
       <workItem from="1592900401638" duration="1787000" />
       <workItem from="1592904619139" duration="146000" />
+      <workItem from="1592906988700" duration="312000" />
     </task>
     <servers />
   </component>
