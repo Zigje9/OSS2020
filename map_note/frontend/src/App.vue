@@ -2,6 +2,9 @@
   <div id="app">
     <div id="map"></div>
 
+<!--    현재 클릭된 위치의 좌표 정보를 보여줍니다.-->
+    <div id="clickLatlng"></div>
+
     {{msg}}
     <form @submit.prevent="submitNote">
       <label>메모</label>
@@ -64,6 +67,15 @@
 
           // 클릭한 위치에 마커를 표시합니다
           addMarker(mouseEvent.latLng);
+
+
+          //현재 클릭된 위치의 좌표 정보를 보여줍니다.
+          var latlng = mouseEvent.latLng;//위치를 저장함
+          var message = '현재 핑의 위치입니다.<br/> 위도 : ' + latlng.getLat() +  '<br/>경도 : ' + latlng.getLng() + '<br/>--------------------------------------------<br/>';
+          var resultDiv = document.getElementById('clickLatlng');
+          resultDiv.innerHTML = message;
+
+
         });
         // 지도에 표시된 마커 객체를 가지고 있을 배열입니다
         var markers = [];
@@ -75,6 +87,10 @@
           marker.setPosition(position);
           // 생성된 마커를 배열에 추가합니다
           markers.push(marker);
+
+
+
+
         }
 
         // 배열에 추가된 마커들을 지도에 표시하거나 삭제하는 함수입니다
