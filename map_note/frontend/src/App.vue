@@ -7,6 +7,8 @@
 
     <div id="map"></div>
 
+    <div id="minimap"></div>
+
 <!--    현재 클릭된 위치의 좌표 정보를 보여줍니다.-->
     <div id="clickLatlng"></div>
 
@@ -19,7 +21,7 @@
     </form>
 
     <br/>
-    <h1>All notes</h1>
+    <h1>메모 목록</h1>
     <ul>
       <li v-for="(note, index) in notes" :key="index">
         <h3>{{note.memo}}</h3>
@@ -53,15 +55,13 @@
       initMap() {
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div
           mapOption = {
-            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+            center: new kakao.maps.LatLng(37.29544298322545, 126.83567569659414), // 지도의 중심좌표 한양대
             level: 3 // 지도의 확대 레벨
           };
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         // 지도를 클릭했을때 클릭한 위치에 마커를 추가하도록 지도에 클릭이벤트를 등록합니다
         // 마커를 중앙에 생성합니다, 마커가 중복되서 찍히지 않기 위해 addmarker 함수밖으로 뺴줍니다.
-        var marker = new kakao.maps.Marker(
-
-        )
+        var marker = new kakao.maps.Marker();
 
         // 마커가 지도 위에 표시되도록 설정합니다
         marker.setMap(map);
@@ -92,11 +92,8 @@
           marker.setPosition(position);
           // 생성된 마커를 배열에 추가합니다
           markers.push(marker);
-
-
-
-
         }
+
 
         // 배열에 추가된 마커들을 지도에 표시하거나 삭제하는 함수입니다
         function setMarkers(map) {
@@ -213,3 +210,4 @@
     padding: 6px 10px;
   }
 </style>
+
