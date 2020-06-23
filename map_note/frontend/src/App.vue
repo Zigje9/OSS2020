@@ -4,10 +4,8 @@
 
     {{msg}}
     <form @submit.prevent="submitNote">
-      <label>Title</label>
+      <label>메모</label>
       <input type="text" v-model="formData.title"/>
-      <label>Content</label>
-      <textarea v-model="formData.content"></textarea>
       <br/>
       <button type="submit">Submit</button>
     </form>
