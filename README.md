@@ -33,6 +33,6 @@ Project members
 실행 가이드
 -
 #### 1. in frontend 
-   > npm run dev
+    > npm run dev
 #### 2. in map_note 
-   > python manage.py runserver
+    > python manage.py runserver
