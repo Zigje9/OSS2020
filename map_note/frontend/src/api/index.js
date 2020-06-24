@@ -4,7 +4,9 @@ export default {
   fetchNotes (method, params, data) {
     if (method === 'post'){
       return ajax('api/notes/', method, {data})
-    } else {
+    } else if(method === 'delete'){
+      return ajax('api/notes/', method, {data})
+    }else {
       return ajax('api/notes/', 'get', {})
     }
   }

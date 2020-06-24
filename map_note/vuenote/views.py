@@ -32,4 +32,5 @@ class NoteView(APIView):
         queryset = Note.objects.filter(memo=d_memo, latitudes=d_latitudes, longitudes=d_longitudes)   # 테이블에서 필터를 통해 조회한후 queryset에 저장
         queryset.delete()   # 해당 데이터를 데이터베이스에서 삭제
 
+
         return HttpResponse("delete")
