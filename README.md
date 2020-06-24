@@ -17,16 +17,16 @@ Project members
   >Github link : <https://github.com/raejoonee>
 
 
-###설치 가이드
-##1. node.js,python 설치
-##2. interpreter: 파이썬 파일로 설정
-#(Appdata-program-python-pythonm)
-##3. frontend에서 
-    >npm install
-##4. map_note에서 
-    >pip install django
-    >pip install django-webpack-loader
-    >pip3 install djangorestframework
-###실행 가이드
-##1. front에서 npm run dev
-##2. map_note에서 python manage.py runserver
+### 설치 가이드
+## 1. node.js,python 설치
+## 2. interpreter: 파이썬 파일로 설정
+# (Appdata-program-python-pythonm)
+## 3. frontend에서 
+    > npm install
+## 4. map_note에서 
+    > pip install django
+    > pip install django-webpack-loader
+    > pip3 install djangorestframework
+### 실행 가이드
+## 1. front에서 npm run dev
+## 2. map_note에서 python manage.py runserver
