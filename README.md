@@ -59,7 +59,8 @@ How to run
     
 If the webpage does not work
 -
-#### 1.remove map_note/db.sqlite3 and map_note/vuenote/migrations/0001_initial.py.
+#### 1.Remove map_note/db.sqlite3. 
+#### 2.And remove map_note/vuenote/migrations/0001_initial.py.
     > initialize data type.
 #### 2.in terminals(/map_note/) enter the command line
     > 1. python manage.py makemigrations
