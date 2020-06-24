@@ -24,4 +24,9 @@ class NoteView(APIView):
         serializer = NoteSerializer(info, many=True)
         return JsonResponse(serializer.data, safe=False)
 
-
+    @staticmethod
+    def delete(request):
+        serializer = NoteSerializer(data=request.data)
+        print(serializer)
+        print(request.data)
+        return HttpResponse("delete")

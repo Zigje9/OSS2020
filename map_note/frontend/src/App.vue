@@ -26,8 +26,10 @@
       <li v-for="(note, index) in notes" :key="index">
         <h3>{{note.memo}}</h3>
 
-        <h5>위도 :{{note.latitudes}}     경도 : {{note.longitudes}}</h5>
+        <h5>위도 :{{note.latitudes.toFixed(5)}}     경도 : {{note.longitudes.toFixed(5)}}</h5>
         <h6>Created on {{note.created}}</h6>
+        <button v-on:click="deleteN(note)">delete</button>
+
       </li>
     </ul>
   </div>
@@ -58,39 +60,14 @@
             center: new kakao.maps.LatLng(37.29544298322545, 126.83567569659414), // 지도의 중심좌표 한양대
             level: 3 // 지도의 확대 레벨
           };
-
-
-
-
          this.map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         // ***** map 에서 this.map 으로 바꿔주면서 생성한 map을 모든함수에서 접근가능하게 만들어주었습니다.
         // 지도를 클릭했을때 클릭한 위치에 마커를 추가하도록 지도에 클릭이벤트를 등록합니다
         // 마커를 중앙에 생성합니다, 마커가 중복되서 찍히지 않기 위해 addmarker 함수밖으로 뺴줍니다.
         var marker = new kakao.maps.Marker();
 
-
         // 마커가 지도 위에 표시되도록 설정합니다
         marker.setMap(this.map);
-
-
-
-          var mapTypeControl = new kakao.maps.MapTypeControl();
-
-          // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
-          // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
-          this.map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-
-          // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
-          var zoomControl = new kakao.maps.ZoomControl();
-          this.map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-
-
-
-
-
-
-
         kakao.maps.event.addListener(this.map, 'click', function (mouseEvent) {
           var latlng = mouseEvent.latLng;
           lat = latlng.getLat();
@@ -142,8 +119,8 @@
 
       submitNote() {
         //선택한 좌표를 저장
-        this.formData.latitudes = lat;
-        this.formData.longitudes = lon;
+       this.formData.latitudes = lat;
+       this.formData.longitudes = lon;
         //지역을 선택안하거나 메모를 입력이 안되있을 경우를 대비
         if (this.formData.latitudes == '0' || this.formData.longitudes == '0') {
 
@@ -161,6 +138,15 @@
         }
 
       },
+      deleteN(note) {
+        console.log(note)
+
+          api.fetchNotes('delete', null, note).then(res => {
+            location.reload();// 페이지 새로 고침
+          }).catch((e) => {
+            this.msg = e.response
+          })
+        },
       fetchAllNotes() {
         api.fetchNotes('get', null, null).then(res => {
           this.notes = res.data
@@ -273,4 +259,3 @@
     padding: 6px 10px;
   }
 </style>
-
