@@ -10,7 +10,7 @@ Project members
   >Github link : <https://github.com/Zigje9>   
 ### 3. 윤찬웅
   >Github link :<https://github.com/qicqock>
-### 4. 정충호
+### 4. 정충호(2017012506)
   >Github link : <https://github.com/cndgh98>
 ### 5. 조재준
   >Github link : <https://github.com/raejoonee>
