@@ -7,13 +7,13 @@ Project members
 -
 ### 1. 김기태(2017011667)
    >Github link :<https://github.com/1004gite> 
-### 2. 박제구
+### 2. 박제구(2015038304)
   >Github link : <https://github.com/Zigje9>   
-### 3. 윤찬웅
+### 3. 윤찬웅(2017012279)
   >Github link :<https://github.com/qicqock>
 ### 4. 정충호(2017012506)
   >Github link : <https://github.com/cndgh98>
-### 5. 조재준
+### 5. 조래준(2015038631)
   >Github link : <https://github.com/raejoonee>
 
 프로젝트 소개
