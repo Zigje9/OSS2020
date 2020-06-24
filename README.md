@@ -42,30 +42,30 @@ Required settings
 #### 2. set interpreter : python3.7
    >(Appdata-program-python-pythonm)
 #### 3. in frontend : install npm 
-    > npm install
+    npm install
 #### 4. in map_note : install django,django-webpack-loader and djangorestframework
-    > pip install django
-    > pip install django-webpack-loader
-    > pip3 install djangorestframework
-    
+    pip install django
+    pip install django-webpack-loader
+    pip3 install djangorestframework
+#### 5. You need Kakao map API key[Kakao Map](https://apis.map.kakao.com/web/)
+##### Change map_note/frontend/App.vue in mounted()
+    script.src = 'http://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=(Your kakao map api key)'
     
 How to run
 -
 #### 1. in frontend 
-    > npm run dev
+    npm run dev
 #### 2. in map_note 
-    > python manage.py runserver
+    python manage.py runserver
     
     
 If the webpage does not work
 -
 #### 1.Remove map_note/db.sqlite3. 
 #### 2.And remove map_note/vuenote/migrations/0001_initial.py.
-    > initialize data type.
+    initialize data type.
 #### 3.in terminals(/map_note/) enter the command line
-    > 1. python manage.py makemigrations
-    > 2. python manage.py migrate
-    > 3. enter npm run dev in frontend terminals
-    > 4. enter python manage.py runserver in map.note terminals
+    python manage.py makemigrations
+    python manage.py migrate
     
 
