@@ -47,7 +47,7 @@ Required settings
     pip install django
     pip install django-webpack-loader
     pip3 install djangorestframework
-#### 5. You need Kakao map API key[Kakao Map](https://apis.map.kakao.com/web/)
+#### 5. You need Kakao map API key ([Kakao Map](https://apis.map.kakao.com/web/))
 ##### Change map_note/frontend/App.vue in mounted()
     script.src = 'http://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=(Your kakao map api key)'
     
