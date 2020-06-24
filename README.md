@@ -26,6 +26,8 @@ Project members
    > Trello link :<https://trello.com/b/0vyzMTpX/oss-project>
    
    > Slack link :<https://oss-dev-2020.slack.com/archives/G0111F29WHZ>
+   
+   >Homepage link :<https://1004gite.github.io/oss2020project/>
   
 기능 소개
 -
