@@ -56,4 +56,15 @@ How to run
 #### 2. in map_note 
     > python manage.py runserver
     
+    
+if the webpage does not work
+-
+#### 1.remove map_note/db.sqlite3 and map_note/vuenote/migrations/0001_initial.py.
+    > initialize data type.
+#### 2.in terminals(/map_note/) enter the command line
+    > 1.python manage.py makemigrations.
+    > 2.python manage.py migrate.
+    > 3. enter npm run dev in frontend terminals.
+    > 4. enter python manage.py runserver in map.note terminals.
+    
 
