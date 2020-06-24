@@ -21,7 +21,9 @@ Project members
    > 이 프로젝트는 지도 일기를 구현하는 프로젝트로 연인간에 데이트 지도일기, 여행일기 등으로 활용이 가능하다.
    > 사용법은 사용자가 지도에 장소를 선택하고 메모를 입력하면 해당 정보가 저장이 된다. 
    > 이 프로젝트는 kakao map API , django, npm ,node.js등을 활용하여 제작되었습니다. 
-   > 협업 도구로는 트렐로
+   > 협업 도구로는 트렐로를 사용했습니다.
+   
+   
 Required settings
 -
 #### 1. You need node.js, python , pip  
