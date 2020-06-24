@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <div style="width:600px; height:150px; border:1px solid red; float:left; margin-bottom:10px;">
+    <div style="width:600px; height:150px; border:1px solid #ff0000; float:left; margin-bottom:10px;">
       <p><big>사용 방법</big></p>
       <p>1. 메모를 남기고 싶은 장소를 클릭합니다.<br/>(클릭한 곳의 좌표가 지도밑에 보여집니다.)<br/>2. 메모를 작성합니다. <br/>3. summit을 눌러 저장합니다</p>
     </div>
 
     <div id="map"></div>
+
+    <div id="minimap"></div>
 
 <!--    현재 클릭된 위치의 좌표 정보를 보여줍니다.-->
     <div id="clickLatlng"></div>
@@ -19,7 +21,7 @@
     </form>
 
     <br/>
-    <h1>All notes</h1>
+    <h1>메모 목록</h1>
     <ul>
       <li v-for="(note, index) in notes" :key="index">
         <h3>{{note.memo}}</h3>
@@ -53,16 +55,14 @@
       initMap() {
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div
           mapOption = {
-            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+            center: new kakao.maps.LatLng(37.29544298322545, 126.83567569659414), // 지도의 중심좌표 한양대
             level: 3 // 지도의 확대 레벨
           };
          this.map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         // ***** map 에서 this.map 으로 바꿔주면서 생성한 map을 모든함수에서 접근가능하게 만들어주었습니다.
         // 지도를 클릭했을때 클릭한 위치에 마커를 추가하도록 지도에 클릭이벤트를 등록합니다
         // 마커를 중앙에 생성합니다, 마커가 중복되서 찍히지 않기 위해 addmarker 함수밖으로 뺴줍니다.
-        var marker = new kakao.maps.Marker(
-
-        )
+        var marker = new kakao.maps.Marker();
 
         // 마커가 지도 위에 표시되도록 설정합니다
         marker.setMap(this.map);
@@ -94,6 +94,7 @@
           // 생성된 마커를 배열에 추가합니다
           markers.push(marker);
         }
+
 
         // 배열에 추가된 마커들을 지도에 표시하거나 삭제하는 함수입니다
         function setMarkers(map) {
@@ -247,3 +248,4 @@
     padding: 6px 10px;
   }
 </style>
+
