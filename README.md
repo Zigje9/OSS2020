@@ -57,7 +57,7 @@ How to run
     > python manage.py runserver
     
     
-if the webpage does not work
+f the webpage does not work
 -
 #### 1.remove map_note/db.sqlite3 and map_note/vuenote/migrations/0001_initial.py.
     > initialize data type.
