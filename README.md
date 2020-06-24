@@ -21,7 +21,17 @@ Project members
    > 이 프로젝트는 지도 일기를 구현하는 프로젝트로 연인간에 데이트 지도일기, 여행일기 등으로 활용이 가능하다.
    > 사용법은 사용자가 지도에 장소를 선택하고 메모를 입력하면 해당 정보가 저장이 된다. 
    > 이 프로젝트는 kakao map API , django, npm ,node.js등을 활용하여 제작되었습니다. 
-   > 협업 도구로는 트렐로를 사용했습니다.
+   > 협업 도구로는 트렐로,슬랙을 사용했습니다.
+   
+   > Trello link :<https://trello.com/b/0vyzMTpX/oss-project>
+   
+   > Slack link :<https://oss-dev-2020.slack.com/archives/G0111F29WHZ>
+  
+기능 소개
+-
+#### 1. 선택한 좌표에 메모를 생성 할 수 있다. (formData : 경도, 위도 , 메모내용 , 생성시간)
+#### 2. 저장된 정보를 가져와 지도에 표시해 준다. 
+
    
    
 Required settings
