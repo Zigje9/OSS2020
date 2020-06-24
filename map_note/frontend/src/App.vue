@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div style="width:600px; height:150px; border:1px solid #ff0000; float:left; margin-bottom:10px;">
+    <div style="width:600px; height:150px; border:1px solid #2c3e50; antiquewhite float:left; margin-bottom:10px;">
       <p><big>사용 방법</big></p>
-      <p>1. 메모를 남기고 싶은 장소를 클릭합니다.<br/>(클릭한 곳의 좌표가 지도밑에 보여집니다.)<br/>2. 메모를 작성합니다. <br/>3. summit을 눌러 저장합니다</p>
+      <p>1. 메모를 남기고 싶은 장소를 클릭합니다.<br/>(클릭한 곳의 좌표가 지도밑에 보여집니다.)<br/>2. 메모를 작성합니다. <br/>3. submit을 눌러 저장합니다</p>
     </div>
 
     <div id="map"></div>
@@ -68,6 +68,22 @@
 
         // 마커가 지도 위에 표시되도록 설정합니다
         marker.setMap(this.map);
+
+
+
+         // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+          var mapTypeControl = new kakao.maps.MapTypeControl();
+
+          // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
+          // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+          this.map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+          // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+          var zoomControl = new kakao.maps.ZoomControl();
+          this.map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+
+
         kakao.maps.event.addListener(this.map, 'click', function (mouseEvent) {
           var latlng = mouseEvent.latLng;
           lat = latlng.getLat();
@@ -253,9 +269,10 @@
   }
 
   button {
-    background: #000;
+    background: #42b983;
     color: #fff;
     border-radius: 3px;
     padding: 6px 10px;
   }
 </style>
+
