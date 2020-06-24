@@ -67,5 +67,8 @@ If the webpage does not work
 #### 3.in terminals(/map_note/) enter the command line
     python manage.py makemigrations
     python manage.py migrate
-    
+
+Open source used
+-
+django-vuejs link : <https://github.com/crescentmusyoki/django-vuejs>
 
