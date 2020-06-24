@@ -1,4 +1,4 @@
-![logo](https://imgur.com/FGwybuG)
+![logo](https://ifh.cc/g/5ZgIzu.png)
 =
 ****
 ### The project is designed for open source software development subjects.
