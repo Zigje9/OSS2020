@@ -20,6 +20,7 @@ lib-cov
 
 # 폴더무시
 venv1/
+venv/
 
 # Coverage directory used by tools like istanbul
 coverage
