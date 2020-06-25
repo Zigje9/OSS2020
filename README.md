@@ -67,6 +67,9 @@ If the webpage does not work
     python manage.py makemigrations
     python manage.py migrate
 
+
+
+
 Open source used
 -
 
@@ -74,3 +77,7 @@ django-vuejs link : <https://github.com/crescentmusyoki/django-vuejs>
 
 kakao map api sample link : <https://apis.map.kakao.com/web/sample/>
 
+설치 및 실행 영상
+-
+
+실행영상 : <https://youtu.be/8ycFeKEfn44>
