@@ -79,5 +79,5 @@ kakao map api sample link : <https://apis.map.kakao.com/web/sample/>
 
 설치 및 실행 영상
 -
-
+설치 가이드 :<https://youtu.be/SMp9R6wR0-8>
 실행영상 : <https://youtu.be/8ycFeKEfn44>
