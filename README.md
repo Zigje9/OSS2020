@@ -20,8 +20,8 @@ Project members
 -
    > 이 프로젝트는 지도 일기를 구현하는 프로젝트로 연인간에 데이트 지도일기, 여행일기 등으로 활용이 가능하다.
    > 사용법은 사용자가 지도에 장소를 선택하고 메모를 입력하면 해당 정보가 저장이 된다. 
-   > 이 프로젝트는 kakao map API , django, npm ,node.js등을 활용하여 제작되었습니다. 
-   > 협업 도구로는 트렐로,슬랙을 사용했습니다.
+   > Frontend는 Vue.js, Backend는 Django 프레임워크를 사용하였고, 데이터베이스는 sqlite3(django 내장), 카카오 맵 API를 사용하여 구현 했습니다.
+   > 협업 도구로는 Trello, Slack, Git을 사용했습니다.
    
    > Trello link :<https://trello.com/b/0vyzMTpX/oss-project>
    
@@ -46,7 +46,7 @@ Required settings
 #### 4. in map_note : install django,django-webpack-loader and djangorestframework
     pip install django
     pip install django-webpack-loader
-    pip3 install djangorestframework
+    pip install djangorestframework
 #### 5. You need Kakao map API key ([Kakao Map](https://apis.map.kakao.com/web/))
 ##### Change map_note/frontend/App.vue in mounted()
     script.src = 'http://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=(Your kakao map api key)'
