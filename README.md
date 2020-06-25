@@ -32,21 +32,20 @@ Project members
 기능 소개
 -
 #### 1. 선택한 좌표에 메모를 생성 할 수 있다. (formData : 경도, 위도 , 메모내용 , 생성시간)
-#### 2. 저장된 정보를 가져와 지도에 표시해 준다. 
+#### 2. 저장된 정보를 가져와 지도에 표시해 준다. (마우스 올려놓으면 메모내용 확인 가능)
+#### 3. 메모를 삭제 할 수 있다.
 
    
    
 Required settings
 -
-#### 1. You need node.js, python , pip  
+#### 1. You need npm, python, pip  
 #### 2. set interpreter : python3.7
    >(Appdata-program-python-pythonm)
-#### 3. in frontend : install npm 
-    npm install
-#### 4. in map_note : install django,django-webpack-loader and djangorestframework
-    pip install django
-    pip install django-webpack-loader
-    pip install djangorestframework
+#### 3. in frontend(dir) : install npm     (run where package.json is)
+    $ npm install
+#### 4. in map_note(dir) : install requirements      (run where requirements.txt is)
+    $ pip install -r requirements.txt
 #### 5. You need Kakao map API key ([Kakao Map](https://apis.map.kakao.com/web/))
 ##### Change map_note/frontend/App.vue in mounted()
     script.src = 'http://dapi.kakao.com/v2/maps/sdk.js?autoload=false&appkey=(Your kakao map api key)'
@@ -54,9 +53,9 @@ Required settings
 How to run
 -
 #### 1. in frontend 
-    npm run dev
+    $ npm run dev
 #### 2. in map_note 
-    python manage.py runserver
+    $ python manage.py runserver
     
     
 If the webpage does not work
@@ -70,5 +69,8 @@ If the webpage does not work
 
 Open source used
 -
+
 django-vuejs link : <https://github.com/crescentmusyoki/django-vuejs>
+
+kakao map api sample link : <https://apis.map.kakao.com/web/sample/>
 
