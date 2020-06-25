@@ -9,7 +9,7 @@
 
     <div id="minimap"></div>
 
-<!--    현재 클릭된 위치의 좌표 정보를 보여줍니다.-->
+    <!-- 현재 클릭된 위치의 좌표 정보를 보여줍니다.-->
     <div id="clickLatlng"></div>
 
     {{msg}}
@@ -54,34 +54,42 @@
       }
     },
     methods: {
+
+
       initMap() {
-        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+        // 지도를 표시할 div
+        var mapContainer = document.getElementById('map'),
           mapOption = {
-            center: new kakao.maps.LatLng(37.29544298322545, 126.83567569659414), // 지도의 중심좌표 한양대
-            level: 3 // 지도의 확대 레벨
+
+          // 지도의 중심좌표 한양대
+            center: new kakao.maps.LatLng(37.29544298322545, 126.83567569659414),
+
+            // 지도의 확대 레벨
+            level: 3
           };
-         this.map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        // 지도를 생성합니다
         // ***** map 에서 this.map 으로 바꿔주면서 생성한 map을 모든함수에서 접근가능하게 만들어주었습니다.
         // 지도를 클릭했을때 클릭한 위치에 마커를 추가하도록 지도에 클릭이벤트를 등록합니다
+        this.map = new kakao.maps.Map(mapContainer, mapOption);
+
         // 마커를 중앙에 생성합니다, 마커가 중복되서 찍히지 않기 위해 addmarker 함수밖으로 뺴줍니다.
         var marker = new kakao.maps.Marker();
 
         // 마커가 지도 위에 표시되도록 설정합니다
         marker.setMap(this.map);
 
+        // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
+        var mapTypeControl = new kakao.maps.MapTypeControl();
 
+        // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
+        // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
+        this.map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
-         // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
-          var mapTypeControl = new kakao.maps.MapTypeControl();
-
-          // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
-          // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
-          this.map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-
-          // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
-          var zoomControl = new kakao.maps.ZoomControl();
-          this.map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
+        // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+        var zoomControl = new kakao.maps.ZoomControl();
+        this.map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
 
         kakao.maps.event.addListener(this.map, 'click', function (mouseEvent) {
@@ -92,23 +100,25 @@
           // 클릭한 위치에 마커를 표시합니다
           addMarker(mouseEvent.latLng);
 
-
           //현재 클릭된 위치의 좌표 정보를 보여줍니다.
-          var latlng = mouseEvent.latLng;//위치를 저장함
+          //위치를 저장함
+          var latlng = mouseEvent.latLng;
           var message = '현재 핑의 위치입니다.<br/> 위도 : ' + latlng.getLat() + '<br/>경도 : ' + latlng.getLng() + '<br/>--------------------------------------------<br/>';
           var resultDiv = document.getElementById('clickLatlng');
           resultDiv.innerHTML = message;
-
-
         });
+
+
         // 지도에 표시된 마커 객체를 가지고 있을 배열입니다
         var markers = [];
+
         // 마커 하나를 지도위에 표시합니다
-        //addMarker(new kakao.maps.LatLng(33.450701, 126.570667));
         // 마커를 생성하고 지도위에 표시하는 함수입니다
         function addMarker(position) {
+
           //마커에 포지션을 바꿔주어 중복된 핑이 생기지 않게 해주는 함수입니다.
           marker.setPosition(position);
+
           // 생성된 마커를 배열에 추가합니다
           markers.push(marker);
         }
@@ -121,10 +131,12 @@
           }
         }
 
+
         // "마커 보이기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에 표시하는 함수입니다
         function showMarkers() {
           setMarkers(this.map)
         }
+
 
         // "마커 감추기" 버튼을 클릭하면 호출되어 배열에 추가된 마커를 지도에서 삭제하는 함수입니다
         function hideMarkers() {
@@ -133,10 +145,11 @@
         this.printdatamarker() //printdatamarker를 호출해줍니다.
       },
 
+
       submitNote() {
         //선택한 좌표를 저장
-       this.formData.latitudes = lat;
-       this.formData.longitudes = lon;
+        this.formData.latitudes = lat;
+        this.formData.longitudes = lon;
         //지역을 선택안하거나 메모를 입력이 안되있을 경우를 대비
         if (this.formData.latitudes == '0' || this.formData.longitudes == '0') {
 
@@ -152,17 +165,19 @@
             this.msg = e.response
           })
         }
-
       },
+
+
       deleteN(note) {
         console.log(note)
+        api.fetchNotes('delete', null, note).then(res => {
+          location.reload();// 페이지 새로 고침
+        }).catch((e) => {
+          this.msg = e.response
+        })
+      },
 
-          api.fetchNotes('delete', null, note).then(res => {
-            location.reload();// 페이지 새로 고침
-          }).catch((e) => {
-            this.msg = e.response
-          })
-        },
+
       fetchAllNotes() {
         api.fetchNotes('get', null, null).then(res => {
           this.notes = res.data
@@ -172,20 +187,25 @@
           console.log(e)
         })
       },
-      printdatamarker() {   //데이터베이스에 있는 마커들을 지도 위에 출력해주는 함수입니다.
+
+      //데이터베이스에 있는 마커들을 지도 위에 출력해주는 함수입니다.
+      printdatamarker() {
         api.fetchNotes('get', null, null).then(res => {
           this.notes = res.data
 
-          let arrdatapositions = [];  //데이터베이스에서 받아오는 값들을 배열로 받았습니다.
+          //데이터베이스에서 받아오는 값들을 배열로 받았습니다.
+          let arrdatapositions = [];
           for (var i = 0; i < this.notes.length; i++) {
             arrdatapositions[i] = {
+
+              //메모의 내용과 위도와 경도를 받아주는 과정입니다.
               title: this.notes[i].memo,
-              latlng: new kakao.maps.LatLng(this.notes[i].latitudes, this.notes[i].longitudes)  //메모의 내용과 위도와 경도를 받아주는 과정입니다.
+              latlng: new kakao.maps.LatLng(this.notes[i].latitudes, this.notes[i].longitudes)
             }
           }
 
-          var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
           //데이터 베이스에 있는 마커입니다. 현재 마커와 차이를 두기위해 다른 이미지를 선택했습니다.
+          var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 
           for (var i = 0; i < arrdatapositions.length; i++) {
 
@@ -197,16 +217,23 @@
 
             // 마커를 생성합니다
             const marker = new kakao.maps.Marker({
-              map: this.map, // 마커를 표시할 지도
-              position: arrdatapositions[i].latlng, // 마커를 표시할 위치
-              title: arrdatapositions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-              image: markerImage // 마커 이미지
+
+              // 마커를 표시할 지도
+              map: this.map,
+
+              // 마커를 표시할 위치
+              position: arrdatapositions[i].latlng,
+
+              // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+              title: arrdatapositions[i].title,
+
+              // 마커 이미지
+              image: markerImage
             });
           }
         })
       }
     },
-
 
 
     mounted() {
@@ -217,16 +244,21 @@
       this.fetchAllNotes()
     }
   }
+
 </script>
+
 <style>
+
   #map {
     text-align: center;
     width: 600px;
     height: 500px;
   }
+
 </style>
 
 <style lang="scss">
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -238,23 +270,28 @@
     text-align: left;
   }
 
+
   h1, h2 {
     font-weight: normal;
   }
+
 
   ul {
     list-style-type: none;
     padding: 0;
   }
 
+
   li {
     display: inline-block;
     margin: 0 10px;
   }
 
+
   a {
     color: #42b983;
   }
+
 
   input, textarea {
     width: 100%;
@@ -264,9 +301,11 @@
     border-radius: 4px;
   }
 
+
   label {
     margin-top: 15px;
   }
+
 
   button {
     background: #42b983;
@@ -274,5 +313,5 @@
     border-radius: 3px;
     padding: 6px 10px;
   }
-</style>
 
+</style>
